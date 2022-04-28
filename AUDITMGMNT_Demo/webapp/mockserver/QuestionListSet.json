@@ -1,0 +1,66 @@
+{
+	"d": {
+		"__count": "69",
+		"results": [{
+			"__metadata": {
+				"id": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412042014120400012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412042014120400012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.QuestionList"
+			},
+			"QuesListId": "3000001",
+			"QuestionListDesc": "Quality Compliance QuestionList",
+			"Plant": "4866",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Approved",
+			"Id": "1",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD"
+		}, {
+			"__metadata": {
+				"id": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412052014120500012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412052014120500012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.QuestionList"
+			},
+			"QuesListId": "3000002",
+			"QuestionListDesc": "Food Safety QuestionList",
+			"Plant": "9305",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Approved",
+			"Id": "2",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD"
+		}, {
+			"__metadata": {
+				"id": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.QuestionList"
+			},
+			"QuesListId": "3000003",
+			"QuestionListDesc": "Food Safety QuestionList",
+			"Plant": "9311",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Approved",
+			"Id": "3",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD"
+		},{
+			"__metadata": {
+				"id": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/QuestionListSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.QuestionList"
+			},
+			"QuesListId": "3000004",
+			"QuestionListDesc": "Olam Generic QuestionList",
+			"Plant": "9322",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Approved",
+			"Id": "3",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD"
+		}]
+	}
+}

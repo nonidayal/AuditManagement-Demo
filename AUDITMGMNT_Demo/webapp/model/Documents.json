@@ -1,0 +1,77 @@
+{
+	"catalog": {
+		"clothing": {
+			"categories": [{
+				"name": "Internal Audit",
+				"categories": [{
+					"name": "Quality Compliance Audit",
+					"categories": [{
+						"name": "QualityComplianceAudit_Actions",
+						"subcat": "",
+						"document": "QualityComplianceAudit_Actions.pdf",
+						"size": "S"
+					}]
+				}]
+			}, {
+				"name": "External Audit",
+				"categories": [{
+					"name": "Food Safety",
+					"categories": [{
+						"name": "ExternalAudit_Actions",
+						"subcat": "",
+						"document": "ExternalAudit_Actions.pdf",
+						"size": "S"
+					}, {
+						"name": "ExternalAudit2_Actions",
+						"subcat": "",
+						"document": "ExternalAudit2_Actions.pdf",
+						"size": "M"
+					}]
+				}]
+			}, {
+				"name": "Customer Audit",
+				"categories": [{
+					"name": "FI Audit",
+					"categories": [{
+						"name": "CustomerFIAudit1_Actions",
+						"subcat": "",
+						"document": "CustomerFIAudit1_Actions.pdf",
+						"size": "S"
+					}, {
+						"name": "CustomerFIAudit2_Actions",
+						"subcat": "",
+						"document": "CustomerFIAudit2_Actions.pdf",
+						"size": "M"
+					}]
+				}, {
+					"name": "QM Audit",
+					"categories": [{
+						"name": "CustomerQMAudit1_Actions",
+						"subcat": "",
+						"document": "CustomerQMAudit1_Actions.pdf",
+						"size": "S"
+					}, {
+						"name": "CustomerQMAudit2_Actions",
+						"subcat": "",
+						"document": "CustomerQMAudit2_Actions.pdf",
+						"size": "M"
+					}]
+				}]
+			}]
+		}
+
+	},
+	"sizes": [{
+		"key": "XS",
+		"value": "Extra Small"
+	}, {
+		"key": "S",
+		"value": "Small"
+	}, {
+		"key": "M",
+		"value": "Medium"
+	}, {
+		"key": "L",
+		"value": "Large"
+	}]
+}

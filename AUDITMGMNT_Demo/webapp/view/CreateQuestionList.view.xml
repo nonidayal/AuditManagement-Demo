@@ -1,0 +1,291 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.CreateQuestionList" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="sPageId" title="Question List-300001">
+				<headerContent>
+					<Button icon="sap-icon://show" type="Accept" text="Summary"/>
+				</headerContent>
+				<content>
+					<IconTabBar applyContentPadding="false" backgroundDesign="Solid" id="idIconTabBarMulti" expanded="{device>/isNoPhone}"
+						class="sapUiNoContentPadding">
+						<items>
+							<IconTabFilter enabled="true" text="Basic Data" icon="sap-icon://legend" key="basicdata">
+								<content>
+									<VBox>
+										<form:Form editable="true">
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement label="Question List">
+															<form:fields>
+																<Input required="true" value="{CreateModel>/data/QuestionList}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Question Description">
+															<form:fields>
+																<TextArea value='{CreateModel>/data/QuestionDescr}' required="true" rows="5"></TextArea>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Hierarchy Profile">
+															<form:fields>
+																<Select width="100%" selectedKey="{CreateModel>/data/hprof}" forceSelection="true">
+																	<items>
+																		<core:Item key="01" text="Part-Element-Question"/>
+																		<core:Item key="02" text="Element-Question"/>
+																		<core:Item key="03" text="Question"/>
+																	</items>
+																</Select>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Created on">
+															<form:fields>
+																<Input value="{ZIPCode}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Created by">
+															<form:fields>
+																<Input value="{ZIPCode}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Changed on">
+															<form:fields>
+																<Input value="{ZIPCode}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Changed by">
+															<form:fields>
+																<Input value="{ZIPCode}"/>
+															</form:fields>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Result" icon="sap-icon://simulate" key="result">
+								<content>
+									<VBox>
+										<form:Form editable="true">
+											<!--<form:toolbar>-->
+											<!--	<Toolbar style="Clear">-->
+											<!--		<ToolbarSpacer/>-->
+											<!--		<Button type="Emphasized" text="Valuate"/>-->
+											<!--		<Button type="Emphasized" text="Create Report"/>-->
+											<!--		<Button type="Emphasized" text="Signature"/>-->
+											<!--	</Toolbar>-->
+											<!--</form:toolbar>-->
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement label="Result Calc">
+															<form:fields>
+																<Input value="{SupplierName}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Degree of ful %">
+															<form:fields>
+																<Input value="{Street}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Min Result">
+															<form:fields>
+																<Input value="{ZIPCode}"/>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Valuation Procedure">
+															<form:fields>
+																<Select selectedKey="{CreateModel>/data/valutnproc}" enabled="{CreateModel>/mode}">
+																	<items>
+																		<core:Item key="01" text="Val acc. to fulfilment(Cumulative)"/>
+																	</items>
+																</Select>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Action Required">
+															<form:fields>
+																<Select forceSelection="false">
+																	<items>
+																		<core:Item key="01" text="Yes"/>
+																		<core:Item key="02" text="No"/>
+																	</items>
+																</Select>
+															</form:fields>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter visible="false" text="Notes" icon="sap-icon://notes" key="notes">
+								<content>
+									<VBox>
+										<form:Form editable="true">
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement label="Description">
+															<form:fields>
+																<TextArea rows="4"></TextArea>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Summary">
+															<form:fields>
+																<TextArea rows="4"></TextArea>
+															</form:fields>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Questions" icon="sap-icon://question-mark" key="questions">
+								<content>
+									<VBox class="sapUiSizeCompact sapUiMediumMarginBegin" width="90%">
+										<Table class="sapUiSmallMarginTop" items="{CreateModel>/data/questions}">
+											<headerToolbar>
+												<OverflowToolbar>
+													<content>
+														<ToolbarSpacer/>
+														<!--<Button text="Display/Edit" type="Emphasized"></Button>-->
+														<!--<Button text="Create Question List" type="Emphasized"></Button>-->
+														<!--<Button text="Create New Question" type="Emphasized"></Button>-->
+														<MenuButton enabled="{CreateModel>/mode}" type="Emphasized" icon="sap-icon://action" text="Create">
+															<menu>
+																<Menu itemSelected="onMenuAction">
+																	<!--<MenuItem text="Part" icon="sap-icon://edit"/>-->
+																	<MenuItem text="Element" icon="sap-icon://add-activity-2"/>
+																	<MenuItem text="Question" icon="sap-icon://add-document"/>
+																</Menu>
+															</menu>
+														</MenuButton>
+														<Button text="Import Question from Template" type="Emphasized"></Button>
+														<Button text="Import Question from Spreadsheet" press="onSpreadsheetQuestionImportPress" type="Emphasized"></Button>
+														<!--<MenuButton type="Emphasized" icon="sap-icon://action" text="Actions">-->
+														<!--	<menu>-->
+														<!--		<Menu itemSelected="onMenuAction">-->
+														<!--			<MenuItem text="Display/Edit" icon="sap-icon://edit"/>-->
+														<!--			<MenuItem text="Create New Question" icon="sap-icon://add-document"/>-->
+														<!--			<MenuItem text="Import Question from Template" icon="sap-icon://arrow-bottom"/>-->
+														<!--		</Menu>-->
+														<!--	</menu>-->
+														<!--</MenuButton>-->
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column >
+													<Text text="Question ID"/>
+												</Column>
+												<Column >
+													<Text text="Element"/>
+												</Column>
+												<Column >
+													<Text text="Question"/>
+												</Column>
+												<!--<Column >-->
+												<!--	<Text text="Question List"/>-->
+												<!--</Column>-->
+												<!--<Column >-->
+												<!--	<Text text="Status"/>-->
+												<!--</Column>-->
+												<!--<Column >-->
+												<!--	<Text text="Remarks"/>-->
+												<!--</Column>-->
+												<Column >
+													<Text text=""/>
+												</Column>
+												<!--<Column >-->
+												<!--	<Text text="Attachments"/>-->
+												<!--</Column>-->
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Link text='{CreateModel>qstnid}'></Link>
+														<Text text="{CreateModel>qstnlist}"></Text>
+														<Text text="{CreateModel>qstn}"></Text>
+														<!--<Link></Link>-->
+														<!--<Text text=""></Text>-->
+														<!--<Text text="{CreateModel>remarks}"></Text>-->
+														<!--<TextArea rows='2'></TextArea>-->
+														<core:Icon src="sap-icon://delete"></core:Icon>
+														<!--<core:Icon src="sap-icon://attachment"></core:Icon>-->
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Attachments" icon="sap-icon://attachment" key="attachments">
+								<content>
+									<VBox class="sapUiSizeCompact sapUiMediumMarginBegin" width="90%">
+										<Table class="sapUiSmallMarginTop" items="{ path: '/ProductCollection', sorter: { path: 'Name' } }">
+											<headerToolbar>
+												<OverflowToolbar>
+													<content>
+														<ToolbarSpacer/>
+														<Button text="Add Attachment" press="onAddAttachmentPress" icon="sap-icon://add" type="Emphasized"></Button>
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column >
+													<Text text="Attachment"/>
+												</Column>
+												<Column >
+													<Text text="Description"/>
+												</Column>
+												<Column >
+													<Text text="Document Type"/>
+												</Column>
+												<Column >
+													<Text text="Action"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Link></Link>
+														<Text text=""></Text>
+														<Text text=""></Text>
+														<core:Icon src="sap-icon://delete"></core:Icon>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</VBox>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Save" type="Accept"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

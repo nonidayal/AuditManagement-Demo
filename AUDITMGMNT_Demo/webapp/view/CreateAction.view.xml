@@ -1,0 +1,330 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.CreateAction"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Create Action">
+				<headerContent>
+					<Button icon="sap-icon://show" press="onViewSummaryPress" type="Accept" text="Summary"/>
+				</headerContent>
+				<content>
+					<IconTabBar applyContentPadding="false" backgroundDesign="Solid" id="idIconTabBarMulti" expanded="{device>/isNoPhone}"
+						class="sapUiNoContentPadding">
+						<items>
+							<IconTabFilter enabled="true" text="Basic Data" icon="sap-icon://legend" key="basicdata">
+								<content>
+									<VBox class="sapUiSizeCompact">
+										<form:Form id="FormChange354" class="sapUiSizeCompact" editable="true">
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="5" labelSpanL="5" labelSpanM="5" labelSpanS="12" adjustLabelSpan="true" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="5" columnsL="4" columnsM="4" singleContainerFullSize="true"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Action" required="true" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" required="true" value="{CreateModel>/data/audit}" id="name"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Action Description" required="true" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/audittype}" required="true"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Planned Start Date" required="true" design="Bold"/>
+																<!--<DatePicker editable="{CreateModel>/mode}" value="{CreateModel>/data/planstart}" required="true" displayFormat="dd.mm.yyyy"-->
+																<!--	placeholder="Enter Date"/>-->
+																<DatePicker 	placeholder="Enter Date"  enabled="{CreateModel>/mode}" id="DP7" value="{CreateModel>/data/planstart}"  change="handleChange" class="sapUiSmallMarginBottom"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Planned End Date" required="true" design="Bold"/>
+																<!--<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/planend}" required="true"/>-->
+																<DatePicker 	placeholder="Enter Date" enabled="{CreateModel>/mode}" id="sId2" value="{CreateModel>/data/planend}" change="handleChange" class="sapUiSmallMarginBottom"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Actual Start Date" required="false" design="Bold"/>
+																<DatePicker editable="{CreateModel>/mode}" value="{CreateModel>/data/actualstart}" required="true" displayFormat="dd.mm.yyyy"
+																	placeholder="Enter Date"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Actual End Date" required="false" design="Bold"/>
+																<DatePicker editable="{CreateModel>/mode}" value="{CreateModel>/data/actualend}" required="false" displayFormat="dd.mm.yyyy"
+																	placeholder="Enter Date"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Level of Completion" required="false" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/site}" required="true"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Priority" required="false" design="Bold"/>
+																<!--<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/audittrigger}" required="true"/>-->
+																<Select width="100%" enabled="{CreateModel>/mode}" forceSelection="true">
+																	<core:Item key="01" text="High"/>
+																	<core:Item key="03" text="Medium"/>
+																	<core:Item key="02" text="Low"/>
+																</Select>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Created on" required="false" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/createdon}"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Created by" required="false" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/createdby}" required="true"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Changed on" required="false" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/changedon}"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Changed by" required="false" design="Bold"/>
+																<Input editable="{CreateModel>/mode}" value="{CreateModel>/data/changedby}"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement>
+															<VBox>
+																<Label text="Comments" required="false" design="Bold"/>
+																<Input value="{CreateModel>/data/releasedby}" editable="{CreateModel>/mode}"/>
+															</VBox>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter enabled="true" text="Contact Persons" icon="sap-icon://customer-and-contacts" key="contact">
+								<content>
+									<VBox class="sapUiSizeCompact sapUiMediumMarginBegin" width="90%">
+										<Table class="sapUiSmallMarginTop" items="{CreateModel>/data/participants}">
+											<headerToolbar>
+												<OverflowToolbar>
+													<content>
+														<ToolbarSpacer></ToolbarSpacer>
+														<Button text="Add" icon="sap-icon://add-document" press="onAddPress" type="Emphasized" enabled="{GlobalModel>/editMode}"></Button>
+														<Button text="Delete" icon="sap-icon://delete" press="onDelete" type="Emphasized" enabled="{GlobalModel>/editMode}"></Button>
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column >
+													<Text text="Role"/>
+												</Column>
+												<Column >
+													<Text text="BP Number"/>
+												</Column>
+												<Column >
+													<Text text="Description"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Select enabled="{CreateModel>/mode}" selectedKey="{CreateModel>Role}" forceSelection="false">
+															<core:Item key="01" text="Auditor"/>
+															<core:Item key="03" text="Lead Auditor"/>
+															<core:Item key="02" text="Person Responsible"/>
+															<core:Item key="04" text="Audit Participant"/>
+															<core:Item key="05" text="Approver"/>
+															<core:Item key="06" text="Action Implementer"/>
+														</Select>
+														<Input editable="{CreateModel>/mode}" value="{CreateModel>bpnumber}"></Input>
+														<Text text="{CreateModel>partdescription}"></Text>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter visible="false" text="Status" icon="sap-icon://complete" key="status">
+								<content>
+									<VBox>
+										<form:Form editable="true">
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement label="Status">
+															<form:fields>
+																<Select selectedKey="{CreateModel>/data/status}" enabled="{CreateModel>/mode}">
+																	<items>
+																		<core:Item key="01" text="Released"/>
+																		<core:Item key="02" text="Delete"/>
+																		<core:Item key="03" text="Lock"/>
+																		<core:Item key="03" text="Complete"/>
+																	</items>
+																</Select>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Additional comments">
+															<form:fields>
+																<TextArea value="{CreateModel>/data/addcmmnts}" editable="{CreateModel>/mode}" rows="4"></TextArea>
+															</form:fields>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter visible="false" text="Notes" icon="sap-icon://notes" key="notes">
+								<content>
+									<VBox>
+										<form:Form editable="true">
+											<form:layout>
+												<form:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+													emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false"/>
+											</form:layout>
+											<form:formContainers>
+												<form:FormContainer>
+													<form:formElements>
+														<form:FormElement label="Description">
+															<form:fields>
+																<TextArea editable="{CreateModel>/mode}" value="{CreateModel>/data/descrdata}" rows="4"></TextArea>
+															</form:fields>
+														</form:FormElement>
+														<form:FormElement label="Summary">
+															<form:fields>
+																<TextArea editable="{CreateModel>/mode}" value="{CreateModel>/data/summary}" rows="4"></TextArea>
+															</form:fields>
+														</form:FormElement>
+													</form:formElements>
+												</form:FormContainer>
+											</form:formContainers>
+										</form:Form>
+									</VBox>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Attachments" icon="sap-icon://attachment" key="attachments">
+								<content>
+									<VBox class="sapUiSizeCompact sapUiMediumMarginBegin" width="90%">
+										<Table class="sapUiSmallMarginTop" items="{CreateModel>/data/attachments}">
+											<headerToolbar>
+												<OverflowToolbar>
+													<content>
+														<ToolbarSpacer/>
+														<Button enabled="{CreateModel>/mode}" text="Add Attachment" press="onAddAttachmentPress" icon="sap-icon://add" type="Emphasized"></Button>
+													</content>
+												</OverflowToolbar>
+											</headerToolbar>
+											<columns>
+												<Column >
+													<Text text="Attachment"/>
+												</Column>
+												<Column >
+													<Text text="Description"/>
+												</Column>
+												<Column >
+													<Text text="Document Type"/>
+												</Column>
+												<Column >
+													<Text text="Action"/>
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Link text="{CreateModel>filename}" enabled="{CreateModel>/mode}"></Link>
+														<Text text="{CreateModel>attachdesc}"></Text>
+														<Text text="{CreateModel>doctype}"></Text>
+														<core:Icon enabled="{CreateModel>/mode}" src="sap-icon://delete"></core:Icon>
+													</cells>
+												</ColumnListItem>
+											</items>
+										</Table>
+									</VBox>
+								</content>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Save" type="Accept"/>
+						<VBox visible="false">
+							<Button press="onEditPress" visible="{= ${CreateModel>/mode} === true? false:true}" text="Edit" type="Accept"/>
+							<Button visible="{CreateModel>/mode}" text="Cancel" type="Reject"/>
+						</VBox>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

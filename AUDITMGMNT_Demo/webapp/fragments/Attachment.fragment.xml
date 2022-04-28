@@ -1,0 +1,38 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="Upload">
+		<UploadCollection id="UploadCollection" maximumFilenameLength="255" maximumFileSize="{settings>/maximumFileSize}" multiple="true"
+			change="onChange" fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed" fileRenamed="onFileRenamed"
+			fileSizeExceed="onFileSizeExceed" fileType="{fileTypes>/selected}" selectionChange="onSelectionChange" typeMissmatch="onTypeMissmatch"
+			uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" uploadTerminated="onUploadTerminated"
+			items="{ path: '/items', templateShareable: false }" numberOfAttachmentsText="Upload" uploadEnabled="true" uploadButtonInvisible="false"
+			mode="{settings>/mode}" instantUpload="false">
+			<!--<toolbar>-->
+			<!--	<OverflowToolbar id="myId">-->
+			<!--		<Title id="attachmentTitle"/>-->
+			<!--		<ToolbarSpacer/>-->
+			<!--<SearchField width="10rem" search="onSearch"/>-->
+			<!--		<Button id="deleteSelectedButton" text="Delete" press="onDeleteSelectedItems" enabled="false" visible="false" type="Transparent"/>-->
+			<!--		<ToggleButton id="selectAllButton" text="Select all" press="onSelectAllPress" enabled="false" visible="false" type="Transparent"/>-->
+			<!--		<UploadCollectionToolbarPlaceholder/>-->
+			<!--	</OverflowToolbar>-->
+			<!--</toolbar>-->
+			<items>
+				<UploadCollectionItem documentId="{documentId}" fileName="{fileName}" mimeType="{mimeType}" thumbnailUrl="{thumbnailUrl}" url="{url}"
+					enableEdit="false" enableDelete="true" visibleDelete="true" visibleEdit="false">
+					<attributes>
+						<!--<ObjectAttribute title="{title}" text="{path : 'text', formatter : '.formatAttribute'}" active="{active}" press="onAttributePress"/>-->
+					</attributes>
+					<!--<statuses>-->
+					<!--	<ObjectStatus title="{title}" text="{text}" state="{state}"/>-->
+					<!--</statuses>-->
+				</UploadCollectionItem>
+			</items>
+		</UploadCollection>
+		<beginButton>
+			<Button press="onUpdateRecord" text="Upload"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseAttachment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

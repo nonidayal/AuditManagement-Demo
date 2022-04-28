@@ -1,0 +1,249 @@
+<mvc:View controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.AuditMgmt" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:table="sap.ui.table" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" height="100%">
+	<f:DynamicPage id="dynamicPageId" preserveHeaderStateOnScroll="false" enableScrolling="false" class="noScroll">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Audit Planning Overview"/>
+				</f:heading>
+				<f:content></f:content>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="LineItemsSet" persistencyKey="SmartFilter_Explored"
+					basicSearchFieldName="AuditPlan" enableBasicSearch="false">
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="AuditType" index="1" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC">
+							<smartFilterBar:defaultFilterValues>
+								<!--<smartFilterBar:SelectOption low="Internal Audit"></smartFilterBar:SelectOption>-->
+								<!--<smartFilterBar:SelectOption low="Customer Audit"></smartFilterBar:SelectOption>-->
+							</smartFilterBar:defaultFilterValues>
+						</smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="Plant" index="2" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC"></smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="CreatedOn" index="3" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC">
+							<smartFilterBar:customControl>
+								<DatePicker id="miCreatedOn" value="{applicationModel>/AuditType}" editable="true"></DatePicker>
+							</smartFilterBar:customControl>
+						</smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="Status" index="4" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC"></smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="BusinessUnit" index="5" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC"></smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:layoutData>
+						<FlexItemData shrinkFactor="0"/>
+					</smartFilterBar:layoutData>
+				</smartFilterBar:SmartFilterBar>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<smartTable:SmartTable id="LineItemsSmartTable" entitySet="LineItemsSet" smartFilterId="smartFilterBar" tableType="ResponsiveTable"
+				useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Audit Plans"
+				showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding"
+				initiallyVisibleFields="BusinessUnit,AuditPlan,AuditPlanDesc,Audit,AuditDesc,AuditType,CreatedOn,CreatedBy,Status" demandPopin="true">
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+				<Table mode="{GlobalModel>/selectionMode}">
+					<headerToolbar>
+						<OverflowToolbar>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://accept" type="Accept" text="Approve" press="onCreateAuditPlan" visible="{GlobalModel>/enableApprove}">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow"/>
+								</layoutData>
+							</Button>
+							<Button icon="sap-icon://decline" type="Reject" text="Reject" press="onCreateAuditPlan" visible="{GlobalModel>/enableReject}">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow"/>
+								</layoutData>
+							</Button>
+							<Button icon="sap-icon://survey" text="Create Audit Plan" press="onCreateAuditPlan">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow"/>
+								</layoutData>
+							</Button>
+							<Button icon="sap-icon://inspection" text="Create Audit" press="onCreateAudit">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="NeverOverflow"/>
+								</layoutData>
+							</Button>
+						</OverflowToolbar>
+					</headerToolbar>
+					<!--<columns>-->
+					<!--	<Column width="6rem">-->
+					<!--		<core:CustomData key="p13nData"-->
+					<!--			value='\{"columnKey" : "AuditPlan", "columnIndex" : "0", "leadingProperty": "AuditPlan","sortProperty": "AuditPlan", "filterProperty": "AuditPlan"}'/>-->
+					<!--		<Label text="Audit Plan" design="Bold"/>-->
+					<!--	</Column>-->
+					<!--	<Column width="12rem">-->
+					<!--		<core:CustomData key="p13nData"-->
+					<!--			value='\{"columnKey" : "AuditPlanDesc", "columnIndex" : "1", "leadingProperty": "AuditPlanDesc","sortProperty": "AuditPlanDesc", "filterProperty": "AuditPlanDesc"}'/>-->
+					<!--		<Label text="Audit Plan Description" design="Bold"/>-->
+					<!--	</Column>-->
+					<!--	<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">-->
+					<!--		<Label text="Audit" design="Bold"/>-->
+					<!--	</Column>-->
+					<!--	<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline">-->
+					<!--		<Label text="Audit Description" design="Bold"/>-->
+					<!--	</Column>-->
+					<!--	<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">-->
+					<!--		<Label text="Audit Type" design="Bold"/>-->
+					<!--	</Column>-->
+					<!--</columns>-->
+					<items>
+						<!--<ColumnListItem>-->
+						<!--	<Link text="{AuditPlan}" wrapping="false" press="onClick"/>-->
+						<!--</ColumnListItem>-->
+						<!--<ColumnListItem>-->
+						<!--	<cells>-->
+						<!--		<Link text="{AuditPlan}" wrapping="false" press="onClick"/>-->
+						<!--		<Text text="{AuditPlanDesc}"/>-->
+						<!--		<Text text="{AuditType}"/>-->
+						<!--		<Text text="{Audit}"/>-->
+						<!--		<Text text="{AuditDesc}"/>-->
+						<!--	</cells>-->
+						<!--</ColumnListItem>-->
+						<ColumnListItem type="Navigation" press="onListItemPress"></ColumnListItem>
+					</items>
+				</Table>
+				<!--<table:Table id="idAudPlanTbl" selectionMode="MultiToggle" visibleRowCount="10" rowSelectionChange="onRowSelectionChange">-->
+				<!--	<OverflowToolbar>-->
+				<!--		<ToolbarSpacer/>-->
+				<!--		<Button icon="sap-icon://survey" text="Create Audit Plan" press="onCreateAuditPlan">-->
+				<!--			<layoutData>-->
+				<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+				<!--			</layoutData>-->
+				<!--		</Button>-->
+				<!--		<Button icon="sap-icon://inspection" text="Create Audit" press="onCreateAudit">-->
+				<!--			<layoutData>-->
+				<!--				<OverflowToolbarLayoutData priority="NeverOverflow"/>-->
+				<!--			</layoutData>-->
+				<!--		</Button>-->
+				<!--	</OverflowToolbar>-->
+				<!--	<table:columns>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "AuditPlan", "columnIndex" : "0", "leadingProperty": "AuditPlan","sortProperty": "AuditPlan", "filterProperty": "AuditPlan"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>AuditPlan}"/>-->
+				<!--			<table:template>-->
+				<!--				<Link text="{AuditPlan}" wrapping="false" press="onClick"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="12rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "AuditPlanDesc", "columnIndex" : "1", "leadingProperty": "AuditPlanDesc","sortProperty": "AuditPlanDesc", "filterProperty": "AuditPlanDesc"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>AuditPlanDesc}" wrapping="false"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{AuditPlanDesc}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "AuditType", "columnIndex" : "2", "leadingProperty": "AuditType","sortProperty": "AuditType", "filterProperty": "AuditType"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>AuditType}" wrapping="false"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{AuditType}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "Audit", "columnIndex" : "3", "leadingProperty": "Audit","sortProperty": "Audit", "filterProperty": "Audit"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>Audit}" wrapping="false"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{Audit}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="12rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "AuditDesc", "columnIndex" : "4", "leadingProperty": "AuditDesc","sortProperty": "AuditDesc", "filterProperty": "AuditDesc"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>AuditDesc}" wrapping="true"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{AuditDesc}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "Plant", "columnIndex" : "5", "leadingProperty": "Plant","sortProperty": "Plant", "filterProperty": "Plant"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>Plant}"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{Plant}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "CreatedOn", "columnIndex" : "6", "leadingProperty": "CreatedOn","sortProperty": "CreatedOn", "filterProperty": "CreatedOn"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>CreatedOn}" wrapping="true"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{CreatedOn}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "CreatedBy", "columnIndex" : "8", "leadingProperty": "CreatedBy","sortProperty": "CreatedBy", "filterProperty": "CreatedBy"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>CreatedBy}"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{CreatedBy}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--		<table:Column width="6rem">-->
+				<!--			<table:customData>-->
+				<!--				<core:CustomData key="p13nData"-->
+				<!--					value='\{"columnKey" : "Status", "columnIndex" : "9", "leadingProperty": "Status","sortProperty": "Status", "filterProperty": "Status"}'/>-->
+				<!--			</table:customData>-->
+				<!--			<Text text="{i18n>Status}" wrapping="false"/>-->
+				<!--			<table:template>-->
+				<!--				<Text text="{Status}" wrapping="false"/>-->
+				<!--			</table:template>-->
+				<!--		</table:Column>-->
+				<!--<table:Column width="6rem">-->
+				<!--	<table:customData>-->
+				<!--		<core:CustomData key="p13nData"-->
+				<!--			value='\{"columnKey" : "ChangedOn", "columnIndex" : "10", "leadingProperty": "ChangedOn","sortProperty": "ChangedOn", "filterProperty": "ChangedOn"}'/>-->
+				<!--	</table:customData>-->
+				<!--	<Text text="{i18n>ChangedOn}"/>-->
+				<!--	<table:template>-->
+				<!--		<Text text="{ChangedOn}" wrapping="true"/>-->
+				<!--	</table:template>-->
+				<!--</table:Column>-->
+				<!--<table:Column width="6rem">-->
+				<!--	<table:customData>-->
+				<!--		<core:CustomData key="p13nData"-->
+				<!--			value='\{"columnKey" : "ChangedBy", "columnIndex" : "11", "leadingProperty": "ChangedBy","sortProperty": "ChangedBy", "filterProperty": "ChangedBy"}'/>-->
+				<!--	</table:customData>-->
+				<!--	<Text text="{i18n>ChangedBy}"/>-->
+				<!--	<table:template>-->
+				<!--		<Text text="{ChangedBy}" wrapping="true"/>-->
+				<!--	</table:template>-->
+				<!--</table:Column>-->
+				<!--	</table:columns>-->
+				<!--</table:Table>-->
+			</smartTable:SmartTable>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

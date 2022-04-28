@@ -1,0 +1,102 @@
+{
+	"d": {
+		"__count": "69",
+		"results": [{
+			"__metadata": {
+				"id": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412042014120400012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412042014120400012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.AuditItems"
+			},
+			"AuditPlan": "100001",
+			"AuditPlanDesc": "QCS Audit_Jan_2021",
+			"AuditType": "Internal Audit",
+			"Audit": "2000001",
+			"AuditDesc": "Quality Compliance Audit",
+			"Plant": "4866",
+			"CreatedOn": "/Date(1641234600000)/",
+			"CreatedBy": "Jeffrey",
+			"Status": "Created",
+			"Id": "1",
+			"ChangedOn": "/Date(1641234600000)/",
+			"ChangedBy": "Jeffrey",
+			"BusinessUnit":"Cocoa"
+		}, {
+			"__metadata": {
+				"id": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412052014120500012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412052014120500012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.AuditItems"
+			},
+			"AuditPlan": "100002",
+			"AuditPlanDesc": "QCS Audit_Jan_2021",
+			"AuditType": "Internal Audit",
+			"Audit": "2000002",
+			"AuditDesc": "Quality Compliance Audit",
+			"Plant": "3536",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Jeffrey",
+			"Status": "In Execution",
+			"Id": "2",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Jeffrey",
+			"BusinessUnit":"Spices"
+		}, {
+			"__metadata": {
+				"id": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"uri": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412302014123000012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0001''%20%29')",
+				"type": "com.sap.GL.zrha.AuditItems"
+			},
+			"AuditPlan": "100002",
+			"AuditPlanDesc": "Food Safety Audit",
+			"AuditType": "Internal Audit",
+			"Audit": "2000003",
+			"AuditDesc": "Food Safety",
+			"Plant": "9302",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Executed",
+			"Id": "3",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD",
+			"BusinessUnit":"Edible Nuts"
+		}, {
+			"__metadata": {
+				"id": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412112014121100012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0011''%20%29')",
+				"uri": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412112014121100012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0011''%20%29')",
+				"type": "com.sap.GL.zrha.AuditItems"
+			},
+			"AuditPlan": "100003",
+			"AuditPlanDesc": "Food Safety Audit",
+			"AuditType": "Internal Audit",
+			"Audit": "2000004",
+			"AuditDesc": "Quality Assurance",
+			"Plant": "9305",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Completed",
+			"Id": "4",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD",
+			"BusinessUnit":"Edible Nuts"
+		},
+		{
+			"__metadata": {
+				"id": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412112014121100012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0011''%20%29')",
+				"uri": "foo/AuditItemsSet('-.-.-.-.-.-.8.8.4.-.4.-.-.3.-.4.-.-.-.-.-.-._.201412112014121100012014EURJ001._.R%28%20GJAHR%20%3D%20''2014''%20AND%20BUKRS%20%3D%20''0011''%20%29')",
+				"type": "com.sap.GL.zrha.AuditItems"
+			},
+			"AuditPlan": "100004",
+			"AuditPlanDesc": "Food Safety Audit",
+			"AuditType": "Internal Audit",
+			"Audit": "2000005",
+			"AuditDesc": "Quality Assurance",
+			"Plant": "9305",
+			"CreatedOn": "/Date(1641797982000)/",
+			"CreatedBy": "Karthikeyan Perumal RD",
+			"Status": "Completed",
+			"Id": "4",
+			"ChangedOn": "/Date(1641797982000)/",
+			"ChangedBy": "Karthikeyan Perumal RD",
+			"BusinessUnit":"Edible Nuts"
+		}]
+	}
+}

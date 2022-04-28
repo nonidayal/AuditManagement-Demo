@@ -1,0 +1,117 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.TrackActions"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar">
+	<f:DynamicPage id="dynamicPageId" preserveHeaderStateOnScroll="false" enableScrolling="false" class="noScroll">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Track Open Actions"/>
+				</f:heading>
+				<f:content></f:content>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true">
+					<fb:filterGroupItems>
+						<fb:FilterGroupItem mandatory="true" groupName="__$INTERNAL$" name="A" label="Action" partOfCurrentVariant="true" visibleInFilterBar="true">
+							<fb:control>
+								<Input></Input>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="Level of Completetion" labelTooltip="Tooltip Example" mandatory="true"
+							partOfCurrentVariant="true" visibleInFilterBar="true">
+							<fb:control>
+								<ComboBox>
+									<items>
+										<core:Item key="001" text="L1"/>
+										<core:Item key="002" text="L2"/>
+										<core:Item key="003" text="L3"/>
+									</items>
+								</ComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem visibleInFilterBar="true" groupName="G1" groupTitle="Group1" name="A1" label="Completed by"
+							labelTooltip="Tooltip GroupItem Example">
+							<fb:control>
+								<Input type="Text"/>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem visibleInFilterBar="true" groupName="G1" groupTitle="Group1" name="B1" label="Higher-level Question">
+							<fb:control>
+								<Input type="Text"/>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem groupName="G2" groupTitle="Group2" name="A2" label="Supplier" labelTooltip="Valuation Profile">
+							<fb:control>
+								<Input type="Text"/>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem visibleInFilterBar="true" groupName="G2" groupTitle="Group2" name="B2" label="Valuation Result">
+							<fb:control>
+								<Input type="Text"/>
+							</fb:control>
+						</fb:FilterGroupItem>
+					</fb:filterGroupItems>
+				</fb:FilterBar>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table growing="true" growingThreshold="3" class="sapUiSmallMarginTop" items="{CreateModel>/data/actions}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<ToolbarSpacer/>
+							<!--<Button text="Display/Edit" type="Emphasized"></Button>-->
+							<SearchField width="20%"></SearchField>
+							<!--<MenuButton type="Emphasized" icon="sap-icon://action" text="Actions">-->
+							<!--	<menu>-->
+							<!--		<Menu itemSelected="onMenuAction">-->
+							<!--			<MenuItem text="Display/Edit" icon="sap-icon://edit"/>-->
+							<!--			<MenuItem text="Create New Action" icon="sap-icon://add-document"/>-->
+							<!--			<MenuItem text="Import Actions from Template" icon="sap-icon://arrow-bottom"/>-->
+							<!--		</Menu>-->
+							<!--	</menu>-->
+							<!--</MenuButton>-->
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column >
+						<Text text="Action"/>
+					</Column>
+					<Column >
+						<Text text="Description"/>
+					</Column>
+					<Column >
+						<Text text="Level of Completion"/>
+					</Column>
+					<Column >
+						<Text text="Completed by"/>
+					</Column>
+					<Column >
+						<Text text="Higher-level Question"/>
+					</Column>
+					<Column >
+						<Text text="Valuation Profile"/>
+					</Column>
+					<Column >
+						<Text text="Valuation Result"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Link text="{CreateModel>action}" enabled="{CreateModel>/mode}"></Link>
+							<Text text="{CreateModel>descr}"></Text>
+							<Text text="{CreateModel>levelcompl}"></Text>
+							<Text text="{CreateModel>compltdby}"></Text>
+							<Text text="{CreateModel>highlvlqstn}"></Text>
+							<Text text="{CreateModel>profile}"></Text>
+							<Text text="{CreateModel>valresult}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

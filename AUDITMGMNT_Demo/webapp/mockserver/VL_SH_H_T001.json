@@ -1,0 +1,22 @@
+[{
+	"__metadata": {
+		"id": "foo/VL_SH_H_T001('0001')",
+		"uri": "foo/VL_SH_H_T001('0001')",
+		"type": "com.sap.GL.zrha.VL_SH_H_T001"
+	},
+	"AuditType": "Internal Audit",
+	"BUTXT": "Internal Audit",
+	"ORT01": "Walldorf",
+	"WAERS": "EUR"
+},
+{
+	"__metadata": {
+		"id": "foo/VL_SH_H_T001('0011')",
+		"uri": "foo/VL_SH_H_T001('0011')",
+		"type": "com.sap.GL.zrha.VL_SH_H_T001"
+	},
+	"AuditType": "Customer Audit",
+	"BUTXT": "Customer Audit",
+	"ORT01": "Walldorf",
+	"WAERS": "EUR"
+}]

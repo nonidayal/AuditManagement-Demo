@@ -1,0 +1,252 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "olam.qm.ZGT_AUDIT_MGMT",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "olam.qm.ZGT_AUDIT_MGMT.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "olam.qm.ZGT_AUDIT_MGMT.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "olam.qm.ZGT_AUDIT_MGMT.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Main",
+					"pattern": "",
+					"target": [
+						"Main"
+					]
+				},
+				{
+					"name": "RouteAuditMgmt",
+					"pattern": "RouteAuditMgmt",
+					"target": [
+						"TargetAuditMgmt"
+					]
+				},
+				{
+					"name": "AuditPlan_Create",
+					"pattern": "AuditPlan_Create/{Mode},{AuditPlan}",
+					"target": [
+						"AuditPlan_Create"
+					]
+				},
+				{
+					"name": "CreateAudit",
+					"pattern": "CreateAudit/:display:",
+					"target": [
+						"CreateAudit"
+					]
+				},
+				{
+					"name": "CreateQuestionList",
+					"pattern": "CreateQuestionList/:display:",
+					"target": [
+						"CreateQuestionList"
+					]
+				},
+				{
+					"name": "CreateQuestions",
+					"pattern": "CreateQuestions",
+					"target": [
+						"CreateQuestions"
+					]
+				},
+				{
+					"name": "ManageAudits",
+					"pattern": "ManageAudits",
+					"target": [
+						"ManageAudits"
+					]
+				},
+				{
+					"name": "TrackActions",
+					"pattern": "TrackActions",
+					"target": [
+						"TrackActions"
+					]
+				},
+				{
+					"name": "TrackAudits",
+					"pattern": "TrackAudits",
+					"target": [
+						"TrackAudits"
+					]
+				},
+				{
+					"name": "ApproveAudits",
+					"pattern": "ApproveAudits",
+					"target": [
+						"ApproveAudits"
+					]
+				},
+				{
+					"name": "CreateAction",
+					"pattern": "CreateAction",
+					"target": [
+						"CreateAction"
+					]
+				},
+				{
+					"name": "Dashboard",
+					"pattern": "Dashboard",
+					"target": [
+						"Dashboard"
+					]
+				},
+				{
+					"name": "DocumentMgmt",
+					"pattern": "DocumentMgmt",
+					"target": [
+						"DocumentMgmt"
+					]
+				},
+				{
+					"name": "ManageQuesList",
+					"pattern": "ManageQuesList",
+					"target": [
+						"ManageQuesList"
+					]
+				}
+			],
+			"targets": {
+				"TargetAuditMgmt": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "AuditMgmt"
+				},
+				"Main": {
+					"viewType": "XML",
+					"viewName": "Main"
+				},
+				"AuditPlan_Create": {
+					"viewType": "XML",
+					"viewName": "AuditPlan_Create"
+				},
+				"CreateAudit": {
+					"viewType": "XML",
+					"viewName": "CreateAudit"
+				},
+				"CreateQuestionList": {
+					"viewType": "XML",
+					"viewName": "CreateQuestionList"
+				},
+				"CreateQuestions": {
+					"viewType": "XML",
+					"viewName": "CreateQuestions"
+				},
+				"ManageAuditPlans": {
+					"viewType": "XML",
+					"viewName": "ManageAuditPlans"
+				},
+				"ManageAudits": {
+					"viewType": "XML",
+					"viewName": "ManageAudits"
+				},
+				"TrackActions": {
+					"viewType": "XML",
+					"viewName": "TrackActions"
+				},
+				"TrackFindings": {
+					"viewType": "XML",
+					"viewName": "TrackFindings"
+				},
+				"TrackAudits": {
+					"viewType": "XML",
+					"viewName": "TrackAudits"
+				},
+				"ApproveAudits": {
+					"viewType": "XML",
+					"viewName": "ApproveAudits"
+				},
+				"CreateAction": {
+					"viewType": "XML",
+					"viewName": "CreateAction"
+				},
+				"Dashboard": {
+					"viewType": "XML",
+					"viewName": "Dashboard"
+				},
+				"DocumentMgmt": {
+					"viewType": "XML",
+					"viewName": "DocumentMgmt"
+				},
+				"ManageQuesList": {
+					"viewType": "XML",
+					"viewName": "ManageQuesList"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog contentHeight="100px" contentWidth='80px' title="Select Plant">
+		<HBox class='sapUiLargeMarginBegin'>
+		<Label class="sapUiLargeMarginBegin sapUiTinyMarginTop" text='Plant  '></Label>
+		<Select width="100%" forceSelection="true">
+			<items>
+				<core:Item key="01" text="4866"/>
+				<core:Item key="02" text="9322"/>
+				<core:Item key="03" text="9305"/>
+				<core:Item key="03" text="9311"/>
+			</items>
+		</Select>
+		</HBox>
+		<beginButton>
+			<Button press="onContinuePress" text="Continue"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onClosePlantDialog"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

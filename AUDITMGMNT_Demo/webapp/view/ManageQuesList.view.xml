@@ -1,0 +1,89 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.ManageQuesList" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<f:DynamicPage id="QListId" preserveHeaderStateOnScroll="false" enableScrolling="false" class="noScroll">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Manage Question List"/>
+				</f:heading>
+				<f:content></f:content>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="false">
+				<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="QuestionListSet" persistencyKey="SmartFilter_Explored"
+					basicSearchFieldName="AuditPlan" enableBasicSearch="false">
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="QuestionListDesc" index="1" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC">
+							<smartFilterBar:defaultFilterValues>
+								<!--<smartFilterBar:SelectOption low="Internal Audit"></smartFilterBar:SelectOption>-->
+								<!--<smartFilterBar:SelectOption low="Customer Audit"></smartFilterBar:SelectOption>-->
+							</smartFilterBar:defaultFilterValues>
+						</smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="Plant" index="2" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC"></smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="CreatedOn" index="3" visibleInAdvancedArea="true" mandatory="auto" groupId="_BASIC">
+							<smartFilterBar:customControl>
+								<DatePicker id="miCreatedOn" value="{applicationModel>/AuditType}" editable="true"></DatePicker>
+							</smartFilterBar:customControl>
+						</smartFilterBar:ControlConfiguration>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:layoutData>
+						<FlexItemData shrinkFactor="0"/>
+					</smartFilterBar:layoutData>
+				</smartFilterBar:SmartFilterBar>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<smartTable:SmartTable id="QuesListSmartTable" entitySet="QuestionListSet" smartFilterId="smartFilterBar" tableType="ResponsiveTable"
+				useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Question List"
+				showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding"
+				requestAtLeastFields="QuesListId" initiallyVisibleFields="QuestionListDesc,Plant,CreatedOn,CreatedBy,ChangedOn,ChangedBy" demandPopin="true">
+				<smartTable:customToolbar>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://create" type="Emphasized" text="Create Question List" press="onCreateQList">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+						<Button icon="sap-icon://download" type="Emphasized" text="Import Question List from Spreadsheet" press="onSpreadsheetQuestionImportPress">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+							<Button icon="sap-icon://copy" type="Emphasized" text="Copy" press="onCopyPress">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="NeverOverflow"/>
+							</layoutData>
+						</Button>
+						<!--</OverflowToolbar>-->
+					</Toolbar>
+				</smartTable:customToolbar>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+				<Table mode="MultiSelect">
+					<columns>
+						<Column width="6rem">
+							<core:CustomData key="p13nData"
+								value='\{"columnKey" : "QuesListId", "columnIndex" : "0", "leadingProperty": "QuesListId","sortProperty": "QuesListId", "filterProperty": "QuesListId"}'/>
+							<Label text="Question List" design="Bold"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<Link text="{QuesListId}" wrapping="false" press="onQListPress"/>
+						</ColumnListItem>
+						<ColumnListItem type="Navigation" press="onListItemPress"></ColumnListItem>
+					</items>
+				</Table>
+			</smartTable:SmartTable>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

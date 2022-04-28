@@ -1,0 +1,539 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:grid="sap.ui.layout.cssgrid" xmlns:uxap="sap.uxap" xmlns:f="sap.f">
+	<App class="sMainBckCls">
+		<pages class="sMainBckCls">
+			<Page class="sMainBckCls" title="Title" showHeader="false">
+				<content class="sMainBckCls">
+					<!--<grid:CSSGrid class="sapUiSmallMarginTop sapUiSizeCompact">-->
+					<!--	<grid:customLayout>-->
+					<!--		<grid:GridResponsiveLayout containerQuery="true">-->
+					<!--			<grid:layoutS>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.25rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"></grid:GridSettings>-->
+					<!--			</grid:layoutS>-->
+					<!--			<grid:layoutM>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"></grid:GridSettings>-->
+					<!--			</grid:layoutM>-->
+					<!--			<grid:layout>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"></grid:GridSettings>-->
+					<!--			</grid:layout>-->
+					<!--		</grid:GridResponsiveLayout>-->
+					<!--	</grid:customLayout>-->
+					<!--	<Title level="H1" titleStyle="H1" width="100%" text="Audit Planning" class="sapUiTinyMarginBegin text-white">-->
+					<!--		<layoutData>-->
+					<!--			<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+					<!--		</layoutData>-->
+					<!--	</Title>-->
+					<!--	<grid:items>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Audit Planning" subheader="Manage your Audit Planning"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://inspection"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Approve Audit Plans" subheader="Approve Audit Plans"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://validate"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Audit Plan" subheader="Manage Audit Plan Creation"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://crm-service-manager"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Approve Audits" subheader="Approve Audits"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://validate"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--	</grid:items>-->
+					<!--</grid:CSSGrid>-->
+					<!--<grid:CSSGrid class="sapUiLargeMarginTop" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">-->
+					<!--	<grid:customLayout>-->
+					<!--		<grid:GridResponsiveLayout containerQuery="true">-->
+					<!--			<grid:layoutS>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutS>-->
+					<!--			<grid:layoutM>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutM>-->
+					<!--			<grid:layoutL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutL>-->
+					<!--			<grid:layoutXL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutXL>-->
+					<!--		</grid:GridResponsiveLayout>-->
+					<!--	</grid:customLayout>-->
+					<!--	<Title level="H1" titleStyle="H1" width="100%" text="Audit Management" class="sapUiTinyMarginBegin text-white">-->
+					<!--		<layoutData>-->
+					<!--			<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+					<!--		</layoutData>-->
+					<!--	</Title>-->
+					<!--	 Begin: Configuración -->
+					<!--	<grid:items>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Dashboard" subheader="Dashboard" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://pie-chart"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Audits" subheader="Manage your Audits"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://inspection"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Question Lists" subheader="Manage your Question List"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://inspection"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Audit" subheader="Manage Create Audit"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://create"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Question List"-->
+					<!--			subheader="Add/Edit/Delete Question Lists" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://add-activity-2"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Question List"-->
+					<!--			subheader="Manage Creation of Question Lists" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://add-activity-2"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Question" subheader="Manage Creation of Questions"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://question-mark"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Action"-->
+					<!--			subheader="Manage Create Actions" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://action"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Audits" subheader="Track your Audits"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://survey"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Approve Audits" subheader="Approve Audits"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://validate"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--	</grid:items>-->
+					<!--</grid:CSSGrid>-->
+					<!--<grid:CSSGrid class="sapUiLargeMarginTop" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">-->
+					<!--	<grid:customLayout>-->
+					<!--		<grid:GridResponsiveLayout containerQuery="true">-->
+					<!--			<grid:layoutS>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutS>-->
+					<!--			<grid:layoutM>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutM>-->
+					<!--			<grid:layoutL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutL>-->
+					<!--			<grid:layoutXL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutXL>-->
+					<!--		</grid:GridResponsiveLayout>-->
+					<!--	</grid:customLayout>-->
+					<!--	<Title level="H1" titleStyle="H1" width="100%" text="Audit Followup" class="sapUiTinyMarginBegin text-white">-->
+					<!--		<layoutData>-->
+					<!--			<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+					<!--		</layoutData>-->
+					<!--	</Title>-->
+					<!--	 Begin: Configuración -->
+					<!--	<grid:items>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Open Actions" subheader="Track Open Audits"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://inspection"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Open Findings" subheader="Track Open Findings"-->
+					<!--			press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://create"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--	</grid:items>-->
+					<!--</grid:CSSGrid>-->
+					<!--<grid:CSSGrid class="sapUiLargeMarginTop" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">-->
+					<!--	<grid:customLayout>-->
+					<!--		<grid:GridResponsiveLayout containerQuery="true">-->
+					<!--			<grid:layoutS>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutS>-->
+					<!--			<grid:layoutM>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutM>-->
+					<!--			<grid:layoutL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutL>-->
+					<!--			<grid:layoutXL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutXL>-->
+					<!--		</grid:GridResponsiveLayout>-->
+					<!--	</grid:customLayout>-->
+					<!--	<Title level="H1" titleStyle="H1" width="100%" text="Reports" class="sapUiTinyMarginBegin text-white">-->
+					<!--		<layoutData>-->
+					<!--			<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+					<!--		</layoutData>-->
+					<!--	</Title>-->
+					<!--	 Begin: Configuración -->
+					<!--	<grid:items>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Report" subheader="Manage Report" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://expense-report"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--	</grid:items>-->
+					<!--</grid:CSSGrid>-->
+					<!--<grid:CSSGrid class="sapUiLargeMarginTop" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">-->
+					<!--	<grid:customLayout>-->
+					<!--		<grid:GridResponsiveLayout containerQuery="true">-->
+					<!--			<grid:layoutS>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutS>-->
+					<!--			<grid:layoutM>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>-->
+					<!--			</grid:layoutM>-->
+					<!--			<grid:layoutL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutL>-->
+					<!--			<grid:layoutXL>-->
+					<!--				<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+					<!--			</grid:layoutXL>-->
+					<!--		</grid:GridResponsiveLayout>-->
+					<!--	</grid:customLayout>-->
+					<!--	<Title level="H1" titleStyle="H1" width="100%" text="Document Management" class="sapUiTinyMarginBegin text-white">-->
+					<!--		<layoutData>-->
+					<!--			<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+					<!--		</layoutData>-->
+					<!--	</Title>-->
+					<!-- Begin: Configuración -->
+					<!--	<grid:items>-->
+					<!--		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Document Management" subheader="Manage Audit Documents" press="onTilePress">-->
+					<!--			<TileContent>-->
+					<!--				<ImageContent src="sap-icon://attachment"/>-->
+					<!--			</TileContent>-->
+					<!--		</GenericTile>-->
+					<!--	</grid:items>-->
+					<!--</grid:CSSGrid>-->
+					<uxap:ObjectPageLayout class="sMainBckCls" id="ObjectPageLayout" showTitleInHeaderContent="false" alwaysShowContentHeader="false"
+						preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false" showFooter="false">
+						<uxap:headerTitle>
+							<!--<uxap:ObjectPageDynamicHeaderTitle>-->
+							<!--	<expandedHeading>-->
+							<!--		<Title text="{GlobalModel>/Title}" wrapping="true" class="sapUiSmallMarginEnd"/>-->
+							<!--	</expandedHeading>-->
+							<!--	<snappedHeading>-->
+							<!--		<FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">-->
+							<!--			<FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">-->
+							<!--				<Title text="{GlobalModel>/Title}" wrapping="true" class="sapUiTinyMarginEnd"/>-->
+							<!--			</FlexBox>-->
+							<!--		</FlexBox>-->
+							<!--	</snappedHeading>-->
+							<!--	<navigationActions></navigationActions>-->
+							<!--</uxap:ObjectPageDynamicHeaderTitle>-->
+						</uxap:headerTitle>
+						<!--<uxap:headerContent>-->
+						<!--<FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">-->
+						<!--	<layout:VerticalLayout >-->
+						<!--		<ObjectStatus title="Status" text="{GlobalModel>/AuditPlanDetails/Status}" state="Warning" class="sapMObjectStatusLarge"/>-->
+						<!--	</layout:VerticalLayout>-->
+						<!--</FlexBox>-->
+						<!--</uxap:headerContent>-->
+						<uxap:sections class="sMainBckCls">
+							<uxap:ObjectPageSection class="sMainBckCls" title="Audit Planning">
+								<uxap:subSections>
+									<uxap:ObjectPageSubSection>
+										<uxap:blocks>
+											<grid:CSSGrid class=" sMainBckCls sapUiSizeCompact">
+												<grid:customLayout>
+													<grid:GridResponsiveLayout containerQuery="true">
+														<grid:layoutS>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.25rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"></grid:GridSettings>
+														</grid:layoutS>
+														<grid:layoutM>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"></grid:GridSettings>
+														</grid:layoutM>
+														<grid:layout>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"></grid:GridSettings>
+														</grid:layout>
+													</grid:GridResponsiveLayout>
+												</grid:customLayout>
+												<Title level="H1" titleStyle="H1" width="100%">
+													<layoutData>
+														<grid:GridItemLayoutData gridColumn="1 / -1"/>
+													</layoutData>
+												</Title>
+												<grid:items>
+													<GenericTile class="sapUiTinyMarginBegin tileLayout" header="Audit Planning" subheader="Manage your Audit Planning" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://inspection"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="" header="Approve Audit Plans" subheader="Approve Audit Plans" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://validate"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin tileLayout" header="Create Audit Plan" subheader="Manage Audit Plan Creation" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://crm-service-manager"/>
+														</TileContent>
+													</GenericTile>
+													<!--<GenericTile class="sapUiTinyMarginBegin tileLayout" header="Approve Audits" subheader="Approve Audits" press="onTilePress">-->
+													<!--	<TileContent>-->
+													<!--		<ImageContent src="sap-icon://validate"/>-->
+													<!--	</TileContent>-->
+													<!--</GenericTile>-->
+												</grid:items>
+											</grid:CSSGrid>
+										</uxap:blocks>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+							<uxap:ObjectPageSection class="sMainBckCls" title="Audit Management">
+								<uxap:subSections>
+									<uxap:ObjectPageSubSection>
+										<uxap:blocks>
+											<grid:CSSGrid class="sMainBckCls" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">
+												<grid:customLayout>
+													<grid:GridResponsiveLayout containerQuery="true">
+														<grid:layoutS>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>
+														</grid:layoutS>
+														<grid:layoutM>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>
+														</grid:layoutM>
+														<grid:layoutL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutL>
+														<grid:layoutXL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutXL>
+													</grid:GridResponsiveLayout>
+												</grid:customLayout>
+												<Title level="H1" titleStyle="H1" width="100%">
+													<layoutData>
+														<grid:GridItemLayoutData gridColumn="1 / -1"/>
+													</layoutData>
+												</Title>
+												<!--Begin: Configuración -->
+												<grid:items>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Dashboard" subheader="Dashboard" press="onTilePress">
+														<!--<TileContent >-->
+														<!--	<NumericContent value="12" withMargin="false"/>-->
+														<!--</TileContent>-->
+														<TileContent>
+															<ImageContent src="sap-icon://pie-chart"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Audits" subheader="Manage your Audits"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://inspection"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Question Lists" subheader="Manage your Question List"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://inspection"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Audit" subheader="Manage Create Audit"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://create"/>
+														</TileContent>
+													</GenericTile>
+													<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Manage Question List"-->
+													<!--	subheader="Add/Edit/Delete Question Lists" press="onTilePress">-->
+													<!--	<TileContent>-->
+													<!--		<ImageContent src="sap-icon://add-activity-2"/>-->
+													<!--	</TileContent>-->
+													<!--</GenericTile>-->
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Question List"
+														subheader="Manage Creation of Question Lists" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://add-activity-2"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Question" subheader="Manage Creation of Questions"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://question-mark"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile visible="false" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Create Action"
+														subheader="Manage Create Actions" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://action"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Audits" subheader="Track your Audits"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://survey"/>
+														</TileContent>
+													</GenericTile>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Approve Audits" subheader="Approve Audits"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://validate"/>
+														</TileContent>
+													</GenericTile>
+												</grid:items>
+											</grid:CSSGrid>
+										</uxap:blocks>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+							<uxap:ObjectPageSection class="sMainBckCls" title="Audit Followup">
+								<uxap:subSections>
+									<uxap:ObjectPageSubSection>
+										<uxap:blocks>
+											<grid:CSSGrid class="sMainBckCls" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">
+												<grid:customLayout>
+													<grid:GridResponsiveLayout containerQuery="true">
+														<grid:layoutS>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>
+														</grid:layoutS>
+														<grid:layoutM>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>
+														</grid:layoutM>
+														<grid:layoutL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutL>
+														<grid:layoutXL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutXL>
+													</grid:GridResponsiveLayout>
+												</grid:customLayout>
+												<Title level="H1" titleStyle="H1" width="100%">
+													<layoutData>
+														<grid:GridItemLayoutData gridColumn="1 / -1"/>
+													</layoutData>
+												</Title>
+												<!--Begin: Configuración -->
+												<grid:items>
+													<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Open Actions" subheader="Track Open Audits"
+														press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://inspection"/>
+														</TileContent>
+													</GenericTile>
+													<!--<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Track Open Findings" subheader="Track Open Findings"-->
+													<!--	press="onTilePress">-->
+													<!--	<TileContent>-->
+													<!--		<ImageContent src="sap-icon://create"/>-->
+													<!--	</TileContent>-->
+													<!--</GenericTile>-->
+												</grid:items>
+											</grid:CSSGrid>
+										</uxap:blocks>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+							<!--<uxap:ObjectPageSection class="sMainBckCls" title="Dashboard">-->
+							<!--	<uxap:subSections>-->
+							<!--		<uxap:ObjectPageSubSection>-->
+							<!--			<uxap:blocks>-->
+							<!--				<grid:CSSGrid class="sMainBckCls" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">-->
+							<!--					<grid:customLayout>-->
+							<!--						<grid:GridResponsiveLayout containerQuery="true">-->
+							<!--							<grid:layoutS>-->
+							<!--								<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>-->
+							<!--							</grid:layoutS>-->
+							<!--							<grid:layoutM>-->
+							<!--								<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>-->
+							<!--							</grid:layoutM>-->
+							<!--							<grid:layoutL>-->
+							<!--								<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+							<!--							</grid:layoutL>-->
+							<!--							<grid:layoutXL>-->
+							<!--								<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>-->
+							<!--							</grid:layoutXL>-->
+							<!--						</grid:GridResponsiveLayout>-->
+							<!--					</grid:customLayout>-->
+							<!--					<Title level="H1" titleStyle="H1" width="100%">-->
+							<!--						<layoutData>-->
+							<!--							<grid:GridItemLayoutData gridColumn="1 / -1"/>-->
+							<!--						</layoutData>-->
+							<!--					</Title>-->
+							<!--Begin: Configuración -->
+							<!--					<grid:items>-->
+							<!--						<GenericTile class="" header="Dashboard" subheader="Manage Report" press="onTilePress">-->
+							<!--							<TileContent>-->
+							<!--								<ImageContent src="sap-icon://expense-report"/>-->
+							<!--							</TileContent>-->
+							<!--						</GenericTile>-->
+							<!--					</grid:items>-->
+							<!--				</grid:CSSGrid>-->
+							<!--			</uxap:blocks>-->
+							<!--		</uxap:ObjectPageSubSection>-->
+							<!--	</uxap:subSections>-->
+							<!--</uxap:ObjectPageSection>-->
+							<uxap:ObjectPageSection class="sMainBckCls" title="Report Management">
+								<uxap:subSections>
+									<uxap:ObjectPageSubSection>
+										<uxap:blocks>
+											<grid:CSSGrid class="sMainBckCls" gridTemplateColumns="1fr 2fr 1fr" gridTemplateRows="50px 200px 50px" gridGap="1rem" visible="true">
+												<grid:customLayout>
+													<grid:GridResponsiveLayout containerQuery="true">
+														<grid:layoutS>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(9.5rem, auto))" gridRowGap="0.5rem" gridColumnGap="0.5rem"/>
+														</grid:layoutS>
+														<grid:layoutM>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="0.5rem"/>
+														</grid:layoutM>
+														<grid:layoutL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutL>
+														<grid:layoutXL>
+															<grid:GridSettings gridTemplateColumns="repeat(auto-fit, minmax(11rem, auto))" gridRowGap="1rem" gridColumnGap="1rem"/>
+														</grid:layoutXL>
+													</grid:GridResponsiveLayout>
+												</grid:customLayout>
+												<Title level="H1" titleStyle="H1" width="100%">
+													<layoutData>
+														<grid:GridItemLayoutData gridColumn="1 / -1"/>
+													</layoutData>
+												</Title>
+												<!--Begin: Configuración -->
+												<grid:items>
+													<GenericTile class="" header="Report Management" subheader="Manage Audit Documents" press="onTilePress">
+														<TileContent>
+															<ImageContent src="sap-icon://attachment"/>
+														</TileContent>
+													</GenericTile>
+												</grid:items>
+											</grid:CSSGrid>
+										</uxap:blocks>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+						</uxap:sections>
+					</uxap:ObjectPageLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

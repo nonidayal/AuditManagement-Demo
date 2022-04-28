@@ -1,0 +1,280 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m"
+	controllerName="olam.qm.ZGT_AUDIT_MGMT.controller.AuditPlan_Create" xmlns="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:upload="sap.m.upload" xmlns:html="http://www.w3.org/1999/xhtml">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false" showFooter="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{GlobalModel>/Title}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<m:Title text="{GlobalModel>/Title}" wrapping="true" class="sapUiTinyMarginEnd"/>
+						</m:FlexBox>
+					</m:FlexBox>
+				</snappedHeading>
+				<navigationActions></navigationActions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<layout:VerticalLayout >
+					<m:ObjectStatus title="Status" text="{GlobalModel>/AuditPlanDetails/Status}" state="Warning" class="sapMObjectStatusLarge"/>
+				</layout:VerticalLayout>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Basic Data">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm id="simform1" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<form:content>
+									<!--<core:Title text=""/>-->
+									<m:Label text="Audit Plan" design="Bold" textAlign="Left" required="true"/>
+									<m:Input value="{GlobalModel>/AuditPlanDetails/AuditPlanDesc}" enabled="{GlobalModel>/editMode}"/>
+									<m:Label text="Detailed Description" design="Bold" textAlign="Left" required="true"/>
+									<m:TextArea value="{GlobalModel>/AuditPlanDetails/DetailDesc}" enabled="{GlobalModel>/editMode}"/>
+									<m:Label text="Business Unit" required="true" design="Bold"/>
+									<m:Select width="100%" enabled="{GlobalModel>/editMode}" selectedKey="{GlobalModel>/AuditPlanDetails/BusinessUnit}" forceSelection="false">
+										<core:Item key="01" text="Cocoa"/>
+										<core:Item key="02" text="Spices"/>
+										<core:Item key="03" text="Edible Nuts"/>
+									</m:Select>
+									<m:Label text="Valid From" design="Bold" textAlign="Left"/>
+									<m:DatePicker value="{path : 'GlobalModel>/AuditPlanDetails/ValidFrom', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long'}}"
+										enabled="{GlobalModel>/editMode}"/>
+									<m:Label text="Valid To" design="Bold" textAlign="Left"/>
+									<m:DatePicker value="{path : 'GlobalModel>/AuditPlanDetails/ValidTo', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long'}}"
+										enabled="{GlobalModel>/editMode}"/>
+									<m:Label text="Approval/Rejection Comments" design="Bold" textAlign="Left" required="true"/>
+									<m:TextArea value="{GlobalModel>/AuditPlanDetails/AddtionalComments}" enabled="{GlobalModel>/editMode}"/>	
+									<m:Label text="Created By" design="Bold" textAlign="Left"/>
+									<m:Text text="{GlobalModel>/AuditPlanDetails/CreatedBy}"/>
+									<m:Label text="Created On" design="Bold" required="false" textAlign="Left"/>
+									<m:Text text="{path : 'GlobalModel>/AuditPlanDetails/CreatedOn', type : 'sap.ui.model.type.Date', formatOptions: { style : 'long'}}"/>
+									<!--<core:Title text=""/>-->
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Contact Person">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<!--<form:SimpleForm id="simform2" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="12"-->
+							<!--	labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"-->
+							<!--	singleContainerFullSize="false">-->
+							<!--	<form:content>-->
+							<!--		<m:Label text="Contact Person" design="Bold" textAlign="Left"/>-->
+							<!--		<m:Input value="{applicationModel>AuditPlanDesc}"/>-->
+							<!--		<m:Label text="Contact Details" design="Bold" textAlign="Left"/>-->
+							<!--		<m:Input value="{applicationModel>AuditPlanDesc}"/>-->
+							<!--	</form:content>-->
+							<!--</form:SimpleForm>-->
+							<m:Table id="apContTable" items="{GlobalModel>/AuditPlanDetails/APContactSet}" mode="SingleSelectMaster">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:content>
+											<m:ToolbarSpacer></m:ToolbarSpacer>
+											<m:Button text="Add" icon="sap-icon://add-document" press="onAdd" type="Emphasized" enabled="{GlobalModel>/editMode}"></m:Button>
+											<m:Button text="Delete" icon="sap-icon://delete" press="onDelete" type="Emphasized" enabled="{GlobalModel>/editMode}"></m:Button>
+										</m:content>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="20%">
+										<m:Label text="Role" design="Bold"/>
+									</m:Column>
+									<m:Column>
+										<m:Label text="BP Number" design="Bold"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+										<m:Label text="Description" design="Bold"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:cells>
+											<m:ComboBox items="" selectedKey="{GlobalModel>Role}" change="onChangeRole" enabled="{GlobalModel>/editMode}">
+												<core:Item key="01" text="Auditor"/>
+												<core:Item key="03" text="Lead Auditor"/>
+												<core:Item key="02" text="Person Responsible"/>
+												<core:Item key="04" text="Audit Participant"/>
+												<core:Item key="05" text="Approver"/>
+												<core:Item key="06" text="Action Implementer"/>
+											</m:ComboBox>
+											<m:Input value="{GlobalModel>BPNum}" enabled="{GlobalModel>/editMode}"></m:Input>
+											<m:Input value="{GlobalModel>Description}" editable="false"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Status" visible="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm id="simformSta" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<form:content>
+									<!--<core:Title text=""/>-->
+									<m:Label text="Status" design="Bold" textAlign="Left"/>
+									<m:ComboBox items="" selectedKey="{GlobalModel>/AuditPlanDetails/AddStatus}" change="onChangeStatus" enabled="{GlobalModel>/editMode}">
+										<core:Item key="Release" text="Release"/>
+										<core:Item key="Delete" text="Delete"/>
+										<core:Item key="Lock" text="Lock"/>
+										<core:Item key="Complete" text="Complete"/>
+									</m:ComboBox>
+									<m:Label text="Additional Remarks" design="Bold" textAlign="Left"/>
+									<m:TextArea value="{GlobalModel>/AuditPlanDetails/AddRemarks}" enabled="{GlobalModel>/editMode}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Audit">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<m:Table id="apAuditTable" items="{GlobalModel>/AuditPlanDetails/APAuditSet}" mode="SingleSelectMaster">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:content>
+											<m:ToolbarSpacer></m:ToolbarSpacer>
+											<m:Button text="Create Audit" icon="sap-icon://add-document" press="onCreateAudit" type="Emphasized" enabled="{GlobalModel>/editMode}"></m:Button>
+										</m:content>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="20%">
+										<m:Label text="Audit" design="Bold"/>
+									</m:Column>
+									<m:Column>
+										<m:Label text="Audit Description" design="Bold"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+										<m:Label text="Audit Type" design="Bold"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+										<m:Label text="Plant" design="Bold"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+										<m:Label text="Status" design="Bold"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:cells>
+											<m:Text text="{GlobalModel>Audit}"></m:Text>
+											<m:Text text="{GlobalModel>AuditDesc}"></m:Text>
+											<m:Text text="{GlobalModel>AuditType}"/>
+											<m:Text text="{GlobalModel>Plant}"/>
+											<m:Text text="{GlobalModel>AuditStatus}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Notes" visible="false">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm id="simformNotes" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="12"
+								labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+								singleContainerFullSize="false">
+								<form:content>
+									<!--<core:Title text=""/>-->
+									<!--<m:Label text="Status" design="Bold" textAlign="Left"/>-->
+									<!--<m:ComboBox items="" selectedKey="{GlobalModel>/AuditPlanDetails/AddStatus}" change="onChangeStatus" enabled="{GlobalModel>/editMode}">-->
+									<!--	<core:Item key="Release" text="Release"/>-->
+									<!--	<core:Item key="Delete" text="Delete"/>-->
+									<!--	<core:Item key="Lock" text="Lock"/>-->
+									<!--	<core:Item key="Complete" text="Complete"/>-->
+									<!--</m:ComboBox>-->
+									<!--<m:Label text="Additional Remarks" design="Bold" textAlign="Left"/>-->
+									<!--<m:TextArea value="{GlobalModel>/AuditPlanDetails/AddRemarks}" enabled="{GlobalModel>/editMode}"/>-->
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Attachments">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<upload:UploadSet id="UploadSet" instantUpload="true" showIcons="true" uploadEnabled="{GlobalModel>/editMode}" terminationEnabled="true"
+								fileTypes="txt,doc,png" maxFileNameLength="30" maxFileSize="200" mediaTypes="text/plain,application/msword,image/jpeg"
+								uploadUrl="../../../../upload" items="{path: '/items', templateShareable: false}">
+								<!--<upload:toolbar>-->
+								<!--	<OverflowToolbar>-->
+								<!--		<Button id="uploadSelectedButton" text="Upload selected" press="onUploadSelectedButton"/>-->
+								<!--		<Button id="downloadSelectedButton" text="Download selected" press="onDownloadSelectedButton"/>-->
+								<!--	</OverflowToolbar>-->
+								<!--</upload:toolbar>-->
+								<upload:items>
+									<upload:UploadSetItem fileName="{fileName}" mediaType="{mediaType}" url="{url}" thumbnailUrl="{thumbnailUrl}"
+										attributes="{path: 'attributes', templateShareable: false}" markers="{path: 'markers', templateShareable: false}"
+										statuses="{path: 'statuses', templateShareable: false}" uploadState="{uploadState}">
+										<upload:attributes>
+											<m:ObjectAttribute title="{title}" text="{text}" active="{active}"/>
+										</upload:attributes>
+										<upload:markers>
+											<m:ObjectMarker type="{type}" visibility="{visibility}"/>
+										</upload:markers>
+										<upload:statuses>
+											<m:ObjectStatus title="{title}" text="{text}" state="{state}" icon="{icon}" active="{active}"/>
+										</upload:statuses>
+									</upload:UploadSetItem>
+								</upload:items>
+							</upload:UploadSet>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<!--<m:Button id="btnErrorDet" type="Reject" icon="sap-icon://message-error" visible="{applicationModel>/MessageErrorVisible}"/>-->
+				<!--<m:Label design="Bold" text="{applicationModel>/MessageText}" visible="{applicationModel>/MessageErrorVisible}"/>-->
+				<m:ToolbarSpacer></m:ToolbarSpacer>
+				<m:Button text="Save" type="Emphasized"/>
+				<m:Button text="Submit" type="Accept"/>
+				<m:Button visible="{= ${GlobalModel>/Mode} === 'Display'}" icon="sap-icon://accept" type="Accept" text="Approve Audit Plan"
+					press="onCreateAuditPlan">
+					<m:layoutData>
+						<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</m:layoutData>
+				</m:Button>
+				<m:Button visible="{= ${GlobalModel>/Mode} === 'Display'}" icon="sap-icon://decline" type="Reject" text="Reject Audit Plan"
+					press="onCreateAuditPlan">
+					<m:layoutData>
+						<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+					</m:layoutData>
+				</m:Button>
+				<m:VBox visible="{= ${GlobalModel>/Mode} === 'Display'}">
+					<m:Button press="onChange" visible="{= ${GlobalModel>/Mode} === 'Display'}" text="Edit" type="Accept"/>
+					<m:Button press="onCancel" visible="{= ${GlobalModel>/Mode} === 'Change'}" text="Cancel" type="Reject"/>
+				</m:VBox>
+				<!--<m:Button text="Change" type="Emphasized" press="onChange" visible="{= ${GlobalModel>/Mode} === 'Display'}"></m:Button>-->
+				<!--<m:Button text="Save" type="Emphasized" press="onSave" enabled="{GlobalModel>/editMode}"></m:Button>-->
+				<!--<m:Button text="Cancel" press="onCancel"></m:Button>-->
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>
